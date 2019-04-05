@@ -36,3 +36,23 @@ function dw_getMenu($location) {
     return $menu;
 }
 
+/* **
+ * Register Custom Post Types
+ */
+function dw_register_post_types() {
+    register_post_type('recipe', [
+        'label' => 'Recettes',
+        'labels' => [
+            'singular_name' => 'Recette',
+            'add_new_item' => 'Ajouter une recette'
+        ],
+        'public' => true,
+        'description' => 'Les différentes recettes disponibles sur le site.',
+        'menu_icon' => 'dashicons-carrot',
+        'menu_position' => 5
+    ]);
+}
+
+add_action('init', 'dw_register_post_types');
+
+

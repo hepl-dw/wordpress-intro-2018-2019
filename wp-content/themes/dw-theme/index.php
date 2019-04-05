@@ -1,5 +1,24 @@
 <?php get_header(); ?>
 
+<h2>Mes dernières recettes</h2>
+
+<?php
+$recipies = new WP_Query([
+    'post_type' => 'recipe',
+    'order' => 'DESC',
+    'orderby' => 'date'
+]);
+
+if($recipies->have_posts()) : while($recipies->have_posts()) : $recipies->the_post(); ?>
+    <article class="recipe">
+        <h3 class="recipe__title"><?php the_title(); ?></h3>
+        <p class="recipe__date">Publié le <time class="recipe__time" datetime="<?php echo get_the_date('c'); ?>"><?php echo get_the_date(); ?></time></p>
+        <a href="<?php the_permalink(); ?>" class="recipe__link">En savoir plus<span class="sro"> sur la recette "<?php the_title(); ?>"</span></a>
+    </article>
+<?php endwhile; else : ?>
+    <p class="empty">Il n'y a pas de recette à afficher actuellement.</p>
+<?php endif; ?>
+
 <h2>Mes derniers articles</h2>
 
 <div class="archive">

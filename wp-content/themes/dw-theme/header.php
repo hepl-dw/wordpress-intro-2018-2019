@@ -63,6 +63,45 @@
     .article__title {
       font-size: 3em;
     }
+
+
+    .kitchen {
+      margin: 2em 0;
+      position: relative;
+    }
+    .kitchen__head {
+      padding: 5em 0;
+      text-align: center;
+      color: #fff;
+      background: green;
+    }
+    .kitchen__title {
+      font-size: 3em;
+    }
+    .kitchen__sub {
+      font-weight: bold;
+      font-size: 1.8em;
+      border-bottom: 1px solid grey;
+      margin-bottom: 1em;
+    }
+    .kitchen__content {
+      margin-bottom: 1em;
+      border-bottom: 1px solid grey;
+      padding-bottom: 3em;
+    }
+    .kitchen__content:after {
+      content: '';
+      clear: both;
+      display: block;
+    }
+    .kitchen__ingredients {
+      width: 20%;
+      float: left;
+    }
+    .kitchen__instructions {
+      width: 75%;
+      float: right
+    }
   </style>
 </head>
 <body>

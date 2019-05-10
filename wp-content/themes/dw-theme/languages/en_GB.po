@@ -1,0 +1,25 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: dw_v01\n"
+"POT-Creation-Date: 2019-05-10 15:30+0200\n"
+"PO-Revision-Date: 2019-05-10 15:36+0200\n"
+"Language-Team: HEPL\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: Poedit 2.2.1\n"
+"X-Poedit-Basepath: ..\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"X-Poedit-KeywordsList: __;_e\n"
+"Last-Translator: \n"
+"Language: en_GB\n"
+"X-Poedit-SearchPath-0: .\n"
+"X-Poedit-SearchPathExcluded-0: languages\n"
+
+#: index.php:3
+msgid "Mes dernières recettes"
+msgstr "My last recipes"
+
+#: index.php:15
+msgid "Publié le :date"
+msgstr "Published on :date"

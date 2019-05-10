@@ -86,3 +86,13 @@ function dw_register_post_types() {
 add_action('init', 'dw_register_post_types');
 
 
+/* **
+ * Register custom translations
+ */
+
+function dw_set_theme_textdomain(){
+    load_theme_textdomain('dw', get_template_directory() . '/languages');
+}
+
+add_action('after_setup_theme', 'dw_set_theme_textdomain');
+

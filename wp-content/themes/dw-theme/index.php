@@ -1,6 +1,6 @@
 <?php get_header(); ?>
 
-<h2>Mes dernières recettes</h2>
+<h2><?= __('Mes dernières recettes', 'dw'); ?></h2>
 
 <?php
 $recipies = new WP_Query([
@@ -12,7 +12,7 @@ $recipies = new WP_Query([
 if($recipies->have_posts()) : while($recipies->have_posts()) : $recipies->the_post(); ?>
     <article class="recipe">
         <h3 class="recipe__title"><?php the_title(); ?></h3>
-        <p class="recipe__date">Publié le <time class="recipe__time" datetime="<?php echo get_the_date('c'); ?>"><?php echo get_the_date(); ?></time></p>
+        <p class="recipe__date"><?= str_replace(':date', '<time class="recipe__time" datetime="' . get_the_date('c') . '">' . get_the_date() . '</time>', __('Publié le :date', 'dw')); ?></p>
         <a href="<?php the_permalink(); ?>" class="recipe__link">En savoir plus<span class="sro"> sur la recette "<?php the_title(); ?>"</span></a>
     </article>
 <?php endwhile; else : ?>

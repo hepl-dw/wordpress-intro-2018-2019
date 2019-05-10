@@ -1,6 +1,25 @@
 <?php
 
 /* **
+ * Handle our custom recipe formular
+ */
+
+function dw_get_recipe_form_token() {
+    return 'dw-custom-form-recipe';
+}
+
+if($_POST['dw_recipe_token'] ?? false === dw_get_recipe_form_token()) {
+    // charger le fichier qui contient notre classe de controller
+    require_once __DIR__ . '/app/DW_RecipeFormController.php';
+
+    // Exécuter le traitement du formulaire
+    $recipe_form = new DW_RecipeFormController($_POST);
+
+    // stocker le feedback du formulaire dans $_SESSION
+    // rediriger l'utilisateur vers la page courante pour affichier le feedback.
+}
+
+/* **
  * Activate Wordpress components
  */
 add_theme_support( 'post-thumbnails' ); 
@@ -50,6 +69,17 @@ function dw_register_post_types() {
         'description' => 'Les différentes recettes disponibles sur le site.',
         'menu_icon' => 'dashicons-carrot',
         'menu_position' => 5
+    ]);
+    register_post_type('user_recipe', [
+        'label' => 'Recettes envoyées',
+        'labels' => [
+            'singular_name' => 'Recette envoyée',
+            'add_new_item' => 'Ajouter une recette'
+        ],
+        'public' => true,
+        'description' => 'Les différentes recettes envoyées par les utilisateurs du site.',
+        'menu_icon' => 'dashicons-carrot',
+        'menu_position' => 6
     ]);
 }
 
